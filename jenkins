@@ -1,0 +1,32 @@
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Downloading source code'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'make'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing C application'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deployment completed'
+            }
+        }
+    }
+}
+
